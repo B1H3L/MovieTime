@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+	layout:decorate="~{master.html}">
+
+<head>
+	<meta charset="UTF-8">
+	<title>Administrar Películas</title>
+</head>
+
+<body>
+	<div layout:fragment="content">
+		<div class="container my-5">
+			<h2>PELICULAS</h2>
+			<div class="txt-end">
+				<a href="/admin/peliculas/nuevo" class="btn btn-primary mb-3">
+					Agregar Pelicula
+				</a>
+			</div>
+			<table class="table table-hover">
+				<thead>
+					<tr>
+						<th></th>
+						<th>PELICULA</th>
+						<th>FECHA DE ESTRENO</th>
+						<th></th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr th:each="pelicula:${peliculas}" th:object="${pelicula}">
+						<td style="width: 150px;">
+							<a th:href="@{/assets/{filename}(filename=*{rutaPortada})}" data-fancybox>
+								<img th:src="@{/assets/{filename}(filename=*{rutaPortada})}" alt=""
+									class="img-thumbnail w-100"></a>
+						</td>
+						<td>
+							<div th:text="*{titulo}" class="fs-5 fw-bold"></div>
+							<p th:text="*{sinopsis}"></p>
+							<div>
+								<span class="badge rounded-pill bg-light text-dark me-1" th:each="genero:*{generos}"
+									th:text="${genero.titulo}">
+								</span>
+							</div>
+						</td>
+						<td th:text="*{#temporals.format(fechaEstreno,'dd/MM/yyyy')}"></td>
+						<td class="text-end">
+							<a class="btn btn-warning" th:href="@{/admin/peliculas/{id}/editar(id=*{id})}">Editar</a>
+							<br>
+							<br>
+							<a class="btn btn-danger" href="javascript:void(0)" ms-3
+								th:onclick="'eliminarpelicula('+*{id}+')'">Eliminar</a>
+							<form th:id="'eliminarpeliculaForm' +*{id}"
+								th:action="@{/admin/peliculas/{id}/eliminar(id=*{id})}" method="post" class="d-none">
+							</form>
+						</td>
+					</tr>
+				</tbody>
+			</table>
+			<div class="row mt-5" th:with="page=${peliculas}">
+				<div class="col-sm-6">
+					<div sd:pagination-sumary>
+					</div>
+					<div class="col-sm-6">
+						<nav>
+							<ul class="pagination" sd:pagination="full"></ul>
+						</nav>
+					</div>
+				</div>
+			</div>
+
+
+
+
+		</div>
+	</div>
+
+
+
+	<div layout:fragment="scripts">
+		<script>
+
+			function eliminarpelicula(id) {
+				if (!confirm("¿Estás seguro de eliminar la pelicula?")) {
+
+					return;
+				}
+				$('#eliminarpeliculaForm' + id).submit();
+			}
+		</script>
+
+	</div>
+
+</body>
+
+</html>
