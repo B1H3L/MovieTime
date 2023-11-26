@@ -5,6 +5,5 @@ import javax.persistence.Entity;
 @Entity
 public class Empleado {
 
-	private int hola;
-	private int hola2;
+	
 }
