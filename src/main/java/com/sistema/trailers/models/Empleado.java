@@ -6,4 +6,5 @@ import javax.persistence.Entity;
 public class Empleado {
 
 	private int hola;
+	private int hola2;
 }
