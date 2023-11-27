@@ -15,7 +15,7 @@
     <script src="https://use.fontawesome.com/releases/v5.0.7/js/all.js"></script>
 
     <!-- Nuestro css-->
-    <link rel="stylesheet" type="text/css" href="static/css/userindex.css" th:href="@{/css/userindex.css}">
+    <link rel="stylesheet" type="text/css" href="/css/userindex.css" th:href="@{/css/userindex.css}">
 
 </head>
 <body>
@@ -23,7 +23,7 @@
         <div class="col-sm-8 main-section">
             <div class="modal-content">
                 <div class="col-12 user-img">
-                    <img src="static/img/user.png" th:src="@{/img/user.png}"/>
+                    <img th:src="@{/img/user.png}"/>
                 </div>
                 <form class="col-12" th:action="@{/login}" method="post">
                     <div class="form-group" id="user-group">
@@ -35,7 +35,7 @@
                     <button type="submit" class="btn btn-primary"><i class="fas fa-sign-in-alt"></i>  Ingresar </button>
                 </form>
                 <div th:if="${param.error}" class="alert alert-danger" role="alert">
-		         usuario invalido
+		            Usuario Invalido.
 		        </div>
 		        <div th:if="${param.logout}" class="alert alert-success" role="alert">
 		            You have been logged out.

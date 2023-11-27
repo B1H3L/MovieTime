@@ -3,12 +3,10 @@ package com.sistema.trailers.controller;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
 
 import com.sistema.trailers.models.Usuario;
 
 @Controller
-@RequestMapping("")
 public class UsuarioController {
 	@GetMapping("/logueo")
 	public String index() {
@@ -21,5 +19,14 @@ public class UsuarioController {
 		return "login";
 	}
 	
+	@GetMapping("/hometra")
+	public String home() {
+		return "peliculas";
+	}
+	
+	@GetMapping("/admintra")
+	public String admin() {
+		return "listadoEmpleado";
+	}
 
 }
