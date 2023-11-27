@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.19.1.final using JasperReports Library version 6.19.1-867c00bf88cd4d784d404379d6c05e1b419e8a4c  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="reporteSalas" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="fb49e964-850b-4245-ba6d-dbee1b40a76f">
+	<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="New Data Adapter"/>
+	<queryString language="SQL">
+		<![CDATA[select movietime.tb_salas.cod_sala ,movietime.tb_salas.butacas , movietime.tb_salas.numero_sala , movietime.tb_tipo_sala.tipo_sala 
+from  movietime.tb_salas inner join  movietime.tb_tipo_sala on movietime.tb_salas.cod_tipo_sala = movietime.tb_tipo_sala.tipo_sala]]>
+	</queryString>
+	<field name="cod_sala" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="cod_sala"/>
+		<property name="com.jaspersoft.studio.field.label" value="cod_sala"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="tb_salas"/>
+	</field>
+	<field name="butacas" class="java.lang.Integer">
+		<property name="com.jaspersoft.studio.field.name" value="butacas"/>
+		<property name="com.jaspersoft.studio.field.label" value="butacas"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="tb_salas"/>
+	</field>
+	<field name="numero_sala" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="numero_sala"/>
+		<property name="com.jaspersoft.studio.field.label" value="numero_sala"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="tb_salas"/>
+	</field>
+	<field name="tipo_sala" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="tipo_sala"/>
+		<property name="com.jaspersoft.studio.field.label" value="tipo_sala"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="tb_tipo_sala"/>
+	</field>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="79" splitType="Stretch"/>
+	</title>
+	<pageHeader>
+		<band height="35" splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="61" splitType="Stretch">
+			<staticText>
+				<reportElement x="31" y="0" width="100" height="30" uuid="2b3c1cb9-88b9-4795-a786-7dfbf54ebb79">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="e4f69ef1-911c-45bc-863f-640ec69d98e4"/>
+				</reportElement>
+				<text><![CDATA[cod_sala]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="170" y="0" width="100" height="30" uuid="faf7f839-457b-4f92-9b89-f29039d57ce0">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="759c1959-ba90-4844-bc44-4534fad3f196"/>
+				</reportElement>
+				<text><![CDATA[butacas]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="314" y="0" width="100" height="30" uuid="2818f0b4-e379-4a6f-b4a5-46750ac1f052">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="468ae21d-4694-413d-bc9e-8857e21f9264"/>
+				</reportElement>
+				<text><![CDATA[numero_sala]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="125" splitType="Stretch">
+			<textField>
+				<reportElement x="10" y="50" width="100" height="30" uuid="c899eb79-ef15-4a3c-98f7-8146f3dad5b0">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="e4f69ef1-911c-45bc-863f-640ec69d98e4"/>
+				</reportElement>
+				<textFieldExpression><![CDATA[$F{cod_sala}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="120" y="50" width="100" height="30" uuid="0a12b722-8a00-4c71-958f-b238591cb641">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="759c1959-ba90-4844-bc44-4534fad3f196"/>
+				</reportElement>
+				<textFieldExpression><![CDATA[$F{butacas}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="260" y="50" width="100" height="30" uuid="ec777ae7-ce6e-4046-834f-6e7877849d4f">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="468ae21d-4694-413d-bc9e-8857e21f9264"/>
+				</reportElement>
+				<textFieldExpression><![CDATA[$F{numero_sala}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="45" splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="54" splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band height="42" splitType="Stretch"/>
+	</summary>
+</jasperReport>
