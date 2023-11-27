@@ -44,15 +44,13 @@ public class WebSecurityConfig {
 			.authorizeHttpRequests( (requests)->requests
 				.antMatchers("/").permitAll()
 				.antMatchers("/login").permitAll()
-				.antMatchers("/admin").hasAnyAuthority("admin")
-				.antMatchers("/home").hasAnyAuthority("admin", "usuario")
 				.anyRequest().authenticated()
 				)
 				.formLogin((form) -> form
 							.loginPage("/login")
 							.usernameParameter("usuario")
 							.passwordParameter("password")
-							.defaultSuccessUrl("/home", true)
+							.defaultSuccessUrl("/grabarempleado", true)
 							.failureUrl("/login?error=true")
 						)
                 .logout(logout -> logout

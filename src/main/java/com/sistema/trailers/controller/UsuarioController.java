@@ -21,12 +21,12 @@ public class UsuarioController {
 	
 	@GetMapping("/hometra")
 	public String home() {
-		return "home";
+		return "peliculas";
 	}
 	
 	@GetMapping("/admintra")
 	public String admin() {
-		return "admin";
+		return "listadoEmpleado";
 	}
 
 }
