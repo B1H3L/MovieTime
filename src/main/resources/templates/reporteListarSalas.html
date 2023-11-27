@@ -1,4 +1,4 @@
-<html xmlns:th="https://www.thymeleaf.org">
+<html xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
 <html>
 <head>
 <meta charset="UTF-8">
@@ -12,7 +12,7 @@
 		<div class="column"></div>
 		<div class="column">
 			<h3>Reporte de Salas</h3>
-			<form action="/reporteSala" method="post">
+			<form action="/reporteSala"  method="post">
 				<label for="codtipoSala">Salas:</label> 
 				<select class="form-control" name="codtipoSala" id="codtipoSala">
 					<option selected>Seleccione</option>
@@ -34,10 +34,10 @@
 				</thead>
 				<tbody>
 					<tr th:each="s : ${listaSalas}">
-						<td th:text="${s.cod_sala}"></td>
-						<td th:text="${s.butacas}"></td>
-						<td th:text="${s.numero_sala}"></td>
-						<td th:text="${s.tipo_sala}"></td>
+                        <td th:text="${s.codigoS}"></td>
+                        <td th:text="${s.Nbutacas}"></td>
+                        <td th:text="${s.nombreS}"></td>
+                        <td th:text="${s.tiposala}"></td>
 					</tr>
 				</tbody>
 			</table>

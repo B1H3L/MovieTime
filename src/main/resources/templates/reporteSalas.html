@@ -1,4 +1,4 @@
-<html xmlns:th="https://www.thymeleaf.org">
+<html xmlns:th="https://www.thymeleaf.org" layout:decorate="~{master.html}">
 <html>
 <head>
 <meta charset="UTF-8">
@@ -7,7 +7,7 @@
 </head>
 <body>
 
-<div class="container">
+<div layout:fragment="content">
 	<div class="row">
 		<div class="column"></div>
 		<div class="column">

@@ -24,7 +24,7 @@ public class HomeController {
 	@Autowired
 	private PeliculaRepository pelicularepositorio;
 
-	@GetMapping("")
+	@GetMapping("/h")
 	public ModelAndView verpaginadeinicio() {
 		List<Pelicula> ultimaspeliculas = pelicularepositorio
 				.findAll(PageRequest.of(0, 4, Sort.by("fechaEstreno").descending())).toList();
