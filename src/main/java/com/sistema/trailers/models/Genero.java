@@ -10,16 +10,17 @@ public class Genero {
 
 	@Id
 	@Column(name = "id_genero")
-	private int id;
+	private int idGenero;
 
+	@Column(name="titulo")
 	private String titulo;
 
-	public int getId() {
-		return id;
+	public int getIdGenero() {
+		return idGenero;
 	}
 
-	public void setId(int id) {
-		this.id = id;
+	public void setIdGenero(int idGenero) {
+		this.idGenero = idGenero;
 	}
 
 	public String getTitulo() {
@@ -38,14 +39,14 @@ public class Genero {
 	// constructor completo
 	public Genero(int id, String titulo) {
 		super();
-		this.id = id;
+		this.idGenero = id;
 		this.titulo = titulo;
 	}
 
 	// constructor de id
 	public Genero(int id) {
 		super();
-		this.id = id;
+		this.idGenero = id;
 	}
 
 	// constructor de titulo

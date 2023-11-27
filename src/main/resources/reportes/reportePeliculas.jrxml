@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.19.1.final using JasperReports Library version 6.19.1-867c00bf88cd4d784d404379d6c05e1b419e8a4c  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="ReportePeliculas" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="e1f3da71-448b-4823-9913-3366f2d2d955">
+	<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="New Data Adapter"/>
+	<queryString language="SQL">
+		<![CDATA[ select  movietime.pelicula.id_pelicula, movietime.pelicula.titulo,
+ movietime.pelicula.fecha_estreno, movietime.pelicula.sinopsis
+ from movietime.pelicula ]]>
+	</queryString>
+	<field name="id_pelicula" class="java.lang.Integer">
+		<property name="com.jaspersoft.studio.field.name" value="id_pelicula"/>
+		<property name="com.jaspersoft.studio.field.label" value="id_pelicula"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="pelicula"/>
+	</field>
+	<field name="titulo" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="titulo"/>
+		<property name="com.jaspersoft.studio.field.label" value="titulo"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="pelicula"/>
+	</field>
+	<field name="fecha_estreno" class="java.sql.Date">
+		<property name="com.jaspersoft.studio.field.name" value="fecha_estreno"/>
+		<property name="com.jaspersoft.studio.field.label" value="fecha_estreno"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="pelicula"/>
+	</field>
+	<field name="sinopsis" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="sinopsis"/>
+		<property name="com.jaspersoft.studio.field.label" value="sinopsis"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="pelicula"/>
+	</field>
+	<group name="id_pelicula">
+		<groupExpression><![CDATA[$F{id_pelicula}]]></groupExpression>
+	</group>
+	<group name="titulo">
+		<groupExpression><![CDATA[$F{titulo}]]></groupExpression>
+	</group>
+	<group name="fecha_estreno">
+		<groupExpression><![CDATA[$F{fecha_estreno}]]></groupExpression>
+	</group>
+	<group name="sinopsis">
+		<groupExpression><![CDATA[$F{sinopsis}]]></groupExpression>
+	</group>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="79" splitType="Stretch"/>
+	</title>
+	<pageHeader>
+		<band height="35" splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="61" splitType="Stretch"/>
+	</columnHeader>
+	<detail>
+		<band height="125" splitType="Stretch"/>
+	</detail>
+	<columnFooter>
+		<band height="45" splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="54" splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band height="42" splitType="Stretch"/>
+	</summary>
+</jasperReport>
