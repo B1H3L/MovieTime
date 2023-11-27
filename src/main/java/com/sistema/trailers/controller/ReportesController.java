@@ -113,7 +113,7 @@ public class ReportesController {
 	}
 	
 	@PostMapping(value="/reporteSala", params="exportar")
-	public void exportarSalas(@RequestParam(name="codTipoSala") String codtipoSala, HttpServletResponse response) throws JRException, SQLException {
+	public void exportarSalas(@RequestParam(name="codtipoSala") String codtipoSala, HttpServletResponse response) throws JRException, SQLException {
 		String nombreReporte = "reporte_salas";
 		response.setHeader("Content-Disposition", "attachment; filename="+nombreReporte+".pdf");
 		response.setContentType("application/pdf");
@@ -128,6 +128,7 @@ public class ReportesController {
 			e.printStackTrace();
 		}
 	}
+
 	
 	
 }

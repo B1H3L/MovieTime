@@ -4,8 +4,8 @@
 	<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
 	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="New Data Adapter"/>
 	<queryString language="SQL">
-		<![CDATA[select movietime.tb_salas.cod_sala ,movietime.tb_salas.butacas , movietime.tb_salas.numero_sala , movietime.tb_tipo_sala.tipo_sala 
-from  movietime.tb_salas inner join  movietime.tb_tipo_sala on movietime.tb_salas.cod_tipo_sala = movietime.tb_tipo_sala.tipo_sala]]>
+		<![CDATA[select s.cod_sala, s.butacas, s.numero_sala, t.tipo_sala from tb_salas s inner join tb_tipo_sala t on s.cod_tipo_sala = t.cod_tipo_sala
+]]>
 	</queryString>
 	<field name="cod_sala" class="java.lang.String">
 		<property name="com.jaspersoft.studio.field.name" value="cod_sala"/>
@@ -31,52 +31,69 @@ from  movietime.tb_salas inner join  movietime.tb_tipo_sala on movietime.tb_sala
 		<band splitType="Stretch"/>
 	</background>
 	<title>
-		<band height="79" splitType="Stretch"/>
+		<band height="65" splitType="Stretch">
+			<textField>
+				<reportElement x="80" y="10" width="400" height="50" forecolor="#A85E8B" uuid="3e10abd9-76cf-44ae-8f9e-e99e0a11e866"/>
+				<textElement textAlignment="Center">
+					<font size="26"/>
+				</textElement>
+				<textFieldExpression><![CDATA["LISTADO DE SALAS"]]></textFieldExpression>
+			</textField>
+		</band>
 	</title>
-	<pageHeader>
-		<band height="35" splitType="Stretch"/>
-	</pageHeader>
 	<columnHeader>
-		<band height="61" splitType="Stretch">
+		<band height="58" splitType="Stretch">
 			<staticText>
-				<reportElement x="31" y="0" width="100" height="30" uuid="2b3c1cb9-88b9-4795-a786-7dfbf54ebb79">
+				<reportElement x="0" y="11" width="80" height="30" uuid="2b3c1cb9-88b9-4795-a786-7dfbf54ebb79">
 					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="e4f69ef1-911c-45bc-863f-640ec69d98e4"/>
 				</reportElement>
-				<text><![CDATA[cod_sala]]></text>
+				<text><![CDATA[CODIGO]]></text>
 			</staticText>
 			<staticText>
-				<reportElement x="170" y="0" width="100" height="30" uuid="faf7f839-457b-4f92-9b89-f29039d57ce0">
+				<reportElement x="110" y="11" width="100" height="30" uuid="faf7f839-457b-4f92-9b89-f29039d57ce0">
 					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="759c1959-ba90-4844-bc44-4534fad3f196"/>
 				</reportElement>
-				<text><![CDATA[butacas]]></text>
+				<text><![CDATA[BUTACAS]]></text>
 			</staticText>
 			<staticText>
-				<reportElement x="314" y="0" width="100" height="30" uuid="2818f0b4-e379-4a6f-b4a5-46750ac1f052">
+				<reportElement x="230" y="10" width="110" height="30" uuid="2818f0b4-e379-4a6f-b4a5-46750ac1f052">
 					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="468ae21d-4694-413d-bc9e-8857e21f9264"/>
 				</reportElement>
-				<text><![CDATA[numero_sala]]></text>
+				<text><![CDATA[NUMERO DE SALA]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="380" y="11" width="90" height="30" uuid="62dceca9-b30d-4ae6-8762-4d1f701e7eb8">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="0049471c-f3c4-4aa8-816d-dedf4599a787"/>
+				</reportElement>
+				<text><![CDATA[TIPO]]></text>
 			</staticText>
 		</band>
 	</columnHeader>
 	<detail>
-		<band height="125" splitType="Stretch">
+		<band height="42" splitType="Stretch">
 			<textField>
-				<reportElement x="10" y="50" width="100" height="30" uuid="c899eb79-ef15-4a3c-98f7-8146f3dad5b0">
+				<reportElement x="0" y="10" width="100" height="30" uuid="c899eb79-ef15-4a3c-98f7-8146f3dad5b0">
 					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="e4f69ef1-911c-45bc-863f-640ec69d98e4"/>
 				</reportElement>
 				<textFieldExpression><![CDATA[$F{cod_sala}]]></textFieldExpression>
 			</textField>
 			<textField>
-				<reportElement x="120" y="50" width="100" height="30" uuid="0a12b722-8a00-4c71-958f-b238591cb641">
+				<reportElement x="100" y="10" width="100" height="30" uuid="0a12b722-8a00-4c71-958f-b238591cb641">
 					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="759c1959-ba90-4844-bc44-4534fad3f196"/>
 				</reportElement>
 				<textFieldExpression><![CDATA[$F{butacas}]]></textFieldExpression>
 			</textField>
 			<textField>
-				<reportElement x="260" y="50" width="100" height="30" uuid="ec777ae7-ce6e-4046-834f-6e7877849d4f">
+				<reportElement x="230" y="10" width="100" height="30" uuid="ec777ae7-ce6e-4046-834f-6e7877849d4f">
 					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="468ae21d-4694-413d-bc9e-8857e21f9264"/>
 				</reportElement>
 				<textFieldExpression><![CDATA[$F{numero_sala}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="370" y="10" width="100" height="30" uuid="133d54cb-3072-49a7-9494-0a06c6cd6022">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="0049471c-f3c4-4aa8-816d-dedf4599a787"/>
+				</reportElement>
+				<textFieldExpression><![CDATA[$F{tipo_sala}]]></textFieldExpression>
 			</textField>
 		</band>
 	</detail>
