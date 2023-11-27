@@ -6,4 +6,5 @@ import com.sistema.trailers.models.Pelicula;
 
 public interface PeliculaRepository extends JpaRepository<Pelicula, Integer> {
 
+
 }
