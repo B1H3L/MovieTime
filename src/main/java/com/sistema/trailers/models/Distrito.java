@@ -10,6 +10,22 @@ import javax.persistence.Table;
 @Table(name="tb_distrito")
 public class Distrito {
 	
+	public String getCodigoD() {
+		return codigoD;
+	}
+
+	public void setCodigoD(String codigoD) {
+		this.codigoD = codigoD;
+	}
+
+	public String getNombreD() {
+		return nombreD;
+	}
+
+	public void setNombreD(String nombreD) {
+		this.nombreD = nombreD;
+	}
+
 	@Id
 	@Column(name="cod_distrito")
 	private String codigoD;
