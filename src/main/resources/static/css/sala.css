@@ -1,0 +1,30 @@
+
+.centered-image {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 20%;
+    height: auto;
+}
+
+label {
+    color:#0A0909  ; 
+    font-weight: bold;
+    font-size: 20px;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    max-width: 450px; 
+    margin: auto; 
+}
+
+.btn-primary {
+    background-color: #292E97;
+    border-color: #292E97; 
+    color: #ffffff !important; 
+    margin-bottom:5px;
+    max-width: 100px;
+}
+

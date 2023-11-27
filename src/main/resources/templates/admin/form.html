@@ -46,7 +46,7 @@
 			<div class="mb-3">
 				<label for="generos" class="form-label">Genero:</label>
 				<select id="generos" class="form-control" th:field="*{generos}" multiple>
-					<option th:each="genero:${generos}" th:value="${genero.id}" th:text="${genero.titulo}"></option>
+					<option th:each="genero:${generos}" th:value="${genero.idGenero}" th:text="${genero.titulo}"></option>
 				</select>
 				<div class="invalid-feedback" th:if="${#fields.hasErrors('generos')}" th:errors="*{generos}"></div>
 			</div>

@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+<html xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"  layout:decorate="~{master.html}">
 
 <head>
 	<meta charset="UTF-8">
@@ -27,46 +27,8 @@
 
 </head>
 
-<body>
+<body layout:fragment="content">
 
-	<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-		<div class="container-fluid">
-			<a class="navbar-brand" href="/">
-				<img th:src="@{/img/logo.png}" alt="mi imagen" class="imagen">
-				MOVIETIME
-			</a>
-			<button class="navbar-toggler" type="button" data-bs-toggle="collapse"
-				data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
-				aria-label="Toggle navigation">
-				<span class="navbar-toggler-icon"></span>
-			</button>
-			<div class="collapse navbar-collapse" id="navbarSupportedContent">
-				<ul class="navbar-nav me-auto mb-2 mb-lg-0">
-					<li class="nav-item">
-						<a class="nav-link" href="/">Inicio</a>
-					</li>
-					<li class="nav-item">
-						<a class="nav-link" href="/peliculas">Peliculas</a>
-					</li>
-					<li class="nav-item">
-                        <a class="nav-link" href="/admin">Agregar Pelicula</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="/grabarempleado">Agregar Empleado</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="/grabarS">Agregar Sala</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="/reportes">REPORTES</a>
-                    </li>
-				</ul>
-				</li>
-				</ul>
-			</div>
-		</div>
-	</nav>
-	
 	<div class="row">
 			<div class="col-md-6">
 				<h1>REPORTES DE PELICULAS</h1>
